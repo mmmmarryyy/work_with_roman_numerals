@@ -83,6 +83,21 @@ class RomanNumeralsValidatorTest {
     }
 
     @Test
+    fun `isValid returns false for input with invalid subtractive notation`() {
+        assertFalse(isValid("VX"))
+        assertFalse(isValid("VL"))
+        assertFalse(isValid("VC"))
+        assertFalse(isValid("VD"))
+        assertFalse(isValid("VM"))
+        assertFalse(isValid("XD"))
+        assertFalse(isValid("XМ"))
+        assertFalse(isValid("IL"))
+        assertFalse(isValid("IC"))
+        assertFalse(isValid("ID"))
+        assertFalse(isValid("IM"))
+    }
+
+    @Test
     fun `isValid returns false for input containing more than one occurrence of a subtractive notation`() {
         assertFalse(isValid("IIL"))
         assertFalse(isValid("IIC"))
@@ -94,15 +109,6 @@ class RomanNumeralsValidatorTest {
         assertFalse(isValid("LLD"))
         assertFalse(isValid("LLM"))
         assertFalse(isValid("DDM"))
-    }
-
-    @Test
-    fun `isValid returns false for input with invalid subtractive notation`() {
-        assertFalse(isValid("VX"))
-        assertFalse(isValid("VL"))
-        assertFalse(isValid("VC"))
-        assertFalse(isValid("VD"))
-        assertFalse(isValid("VM"))
     }
 }
 
